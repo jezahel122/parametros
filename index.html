@@ -33,3 +33,65 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Matematicas</title>
+</head>
+
+<body>
+    <h1>Funciones Matematicas</h1>
+    <div>
+        <form onsubmit="funcion(event)" method="get">
+            <div>
+                <label for="numero">Ingresar un numero:</label>
+                <input type="number" id="numero" name="numero">
+            </div>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <h2>Resultados</h2>
+    <div>
+        <p id="resultado"></p>
+    </div>
+
+    <script src="js/funciones.js"></script>
+
+</body>
+</html>
+
+
+
+function funcion(event){
+    //no recargar automaticamente la pagina
+    event.preventDefault();
+
+    //obtenemos le valor del imput en una variable local
+    //local
+    let numero = document.getElementById("numero").value;
+    //calculo la raiz cuadrada del numero mediante la funcion Math.sqrt()
+    var resultado = Math.sqrt (numero);
+    //calculo del seno de un numero
+    var resultado2 = Math.sin(resultado);
+    //Elevar un numero a la potencia
+    var resultado3 = Math.pow(resultado2, 3);
+    //muestro el resultado en el elemento con id resultado
+    document.getElementById("resultado").innerHTML = "La raiz del numero " + numero + " es: " + resultado 
+    + "<br> El seno del resultado de la raiz es: " + resultado2 + 
+    "<br> Resultado del valor elevado al cubo es " + resultado3;
+
+}
